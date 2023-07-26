@@ -2,6 +2,7 @@ package br.com.eduardo.banco.modelo;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Pessoa {
 
@@ -15,10 +16,6 @@ public class Pessoa {
 
     }
 
-    /**
-     * @param nome
-     * @param documento
-     */
     public Pessoa(String nome, String documento) {
         this.nome = nome;
         this.documento = documento;
@@ -62,6 +59,23 @@ public class Pessoa {
 
     public void setDataUltimaAtualizacao(LocalDateTime dataUltimaAtualizacao) {
         this.dataUltimaAtualizacao = dataUltimaAtualizacao;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Pessoa pessoa = (Pessoa) obj;
+        return Objects.equals(documento, pessoa.documento);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(documento);
     }
 
     @Override

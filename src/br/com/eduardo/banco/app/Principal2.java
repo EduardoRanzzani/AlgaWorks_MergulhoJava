@@ -1,7 +1,7 @@
 package br.com.eduardo.banco.app;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import br.com.eduardo.banco.modelo.Pessoa;
 
@@ -10,7 +10,8 @@ public class Principal2 {
         Pessoa pessoa1 = new Pessoa("João da Silva", "12345678909");
         Pessoa pessoa2 = new Pessoa("Maria das Couves", "22233344455");
 
-        List<Pessoa> pessoas = new ArrayList<>();
+        // List<Pessoa> pessoas = new ArrayList<>();
+        Set<Pessoa> pessoas = new HashSet<>();
         pessoas.add(pessoa1);
         pessoas.add(pessoa2);
 
